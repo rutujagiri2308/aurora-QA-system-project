@@ -116,15 +116,6 @@ The API will be available at `http://localhost:8000`
 }
 ```
 
-## Deployment
-
-### Railway 
-1. Push code to GitHub
-2. Go to https://railway.app
-3. Create new project → Deploy from GitHub repo
-4. Add environment variable: `OPENAI_API_KEY`
-5. Deploy automatically
-
 
 ## Project Structure
 
@@ -137,6 +128,10 @@ member-qa-system/
 ├── README.md           # This file
 └── .gitignore          # Git ignore rules
 ```
+### Environment Variables
+
+For security, the `.env` file is **not included** in this public repository.
+Before running the app locally, create a `.env` file in the root directory:
 
 ## Technologies Used
 
@@ -404,9 +399,9 @@ MIT License
 
 ---
 
-**Deployment URL:** [Your deployed URL]
+**Deployment URL:** 
 
-**GitHub Repository:** [Your GitHub repo]
+**GitHub Repository:** 
 
 **Version:** 1.0.0  
 **Status:** Production Ready  

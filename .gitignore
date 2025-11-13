@@ -2,21 +2,13 @@
 .env
 .env.local
 
-# Python
+# Virtual environment
+venv/
+
+# Python bytecode
 __pycache__/
 *.py[cod]
 *$py.class
+
+# C extensions
 *.so
-.Python
-venv/
-ENV/
-env/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# OS
-.DS_Store
-Thumbs.db
