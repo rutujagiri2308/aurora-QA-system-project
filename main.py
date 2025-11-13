@@ -15,7 +15,17 @@ app = FastAPI()
 AURORA_API = "https://november7-730026606190.europe-west1.run.app/messages"
 
 # Initialize OpenAI client
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = None
+
+def get_openai_client():
+    """Get or create OpenAI client"""
+    global client
+    if client is None:
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY environment variable not set")
+        client = OpenAI(api_key=api_key)
+    return client
 
 
 @app.get("/ask")
@@ -69,7 +79,8 @@ If the information isn't available, say: "I could not find that information."
 
     # 7️⃣ Query the OpenAI API for the answer
     try:
-        completion = client.chat.completions.create(
+        client_instance = get_openai_client()
+        completion = client_instance.chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt}]
         )
