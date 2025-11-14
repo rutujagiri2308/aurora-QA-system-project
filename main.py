@@ -14,8 +14,9 @@ app = FastAPI()
 # Aurora public API endpoint
 AURORA_API = "https://november7-730026606190.europe-west1.run.app/messages"
 
-# Initialize OpenAI client
+# Initialize OpenAI client - FIX: Lazy initialization
 client = None
+
 
 def get_openai_client():
     """Get or create OpenAI client"""
@@ -77,7 +78,7 @@ Answer concisely and only based on the above messages.
 If the information isn't available, say: "I could not find that information."
 """
 
-    # 7️⃣ Query the OpenAI API for the answer
+    # Query the OpenAI API for the answer
     try:
         client_instance = get_openai_client()
         completion = client_instance.chat.completions.create(
@@ -88,3 +89,9 @@ If the information isn't available, say: "I could not find that information."
         return {"answer": answer}
     except Exception as e:
         return {"error": f"OpenAI API error: {e}"}
+
+
+@app.get("/health")
+def health():
+    """Health check endpoint"""
+    return {"status": "ok", "message": "Member QA System is running"}
