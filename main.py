@@ -101,7 +101,7 @@ If the information isn't available, say: "I could not find that information."
     except Exception as e:
         return {"error": f"OpenAI error: {str(e)}"}
 
-
+# Too check health
 @app.get("/health")
 def health():
     """Health check endpoint"""
