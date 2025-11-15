@@ -87,9 +87,9 @@ curl "https://web-production-aad6.up.railway.app/ask?question=What%20did%20Sophi
 
 | Question                                 | Result                                    |
 |------------------------------------------|-------------------------------------------|
-| "What did Sophia Al-Farsi request?"      | ✅ Returns detailed answer                |
-| "What are Amira's favorite restaurants?" | ✅ Returns "not found" (data unavailable) |
-| "How many cars does Vikram Desai have?"  | ✅ Returns "not found" (data unavailable) |
+| What did Sophia Al-Farsi request?      | Returns detailed answer                |
+| What are Amira's favorite restaurants? | Returns "not found" (data unavailable) |
+| How many cars does Vikram Desai have?  | Returns "not found" (data unavailable) |
 
 **Note:** "Not found" responses are correct - they indicate the data doesn't exist in Aurora API.
 
@@ -214,6 +214,5 @@ MIT
 
 **GitHub:** https://github.com/rutujagiri2308/aurora-QA-system-project  
 **Deployed:** https://web-production-aad6.up.railway.app/docs 
-
 **Version:** 1.0.0  
 **Status:** Production Ready
