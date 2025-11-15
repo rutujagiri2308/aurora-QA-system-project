@@ -14,12 +14,12 @@ app = FastAPI()
 # Aurora public API endpoint
 AURORA_API = "https://november7-730026606190.europe-west1.run.app/messages"
 
-# Initialize OpenAI client - FIX: Lazy initialization
+# Initialize OpenAI client - LAZY INITIALIZATION
 client = None
 
 
 def get_openai_client():
-    """Get or create OpenAI client"""
+    """Get or create OpenAI client - initialized on first use"""
     global client
     if client is None:
         api_key = os.getenv("OPENAI_API_KEY")
