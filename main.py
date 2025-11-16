@@ -11,7 +11,6 @@ load_dotenv()
 # Initialize FastAPI app
 app = FastAPI(
     title="Aurora Member QA System",
-    description="An intelligent question-answering API that understands natural language questions about Aurora members using OpenAI GPT-4o-mini and live Aurora data.",
     version="1.0.0"
 )
 
