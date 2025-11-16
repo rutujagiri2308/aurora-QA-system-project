@@ -9,7 +9,25 @@ from openai import OpenAI
 load_dotenv()
 
 # Initialize FastAPI app
-app = FastAPI()
+app = FastAPI(
+    title="Aurora Member QA System 🚀",
+    description="""
+A natural language **Question-Answering API** that fetches live data from Aurora's public API 
+and uses **OpenAI GPT-4o-mini** to respond to member-related queries.
+
+### Key Features
+- 🔗 Real-time Aurora data
+- 🧠 GPT-powered answers
+- 🧩 Clean REST endpoint `/ask`
+- 🌐 Deployed on Railway
+    """,
+    version="1.0.0",
+    contact={
+        "name": "Rutuja Giri",
+        "url": "https://github.com/rutujagiri2308/aurora-QA-system-project",
+        "email": "rutujagiri2308@gmail.com",
+    },
+)
 
 # Aurora public API endpoint
 AURORA_API = "https://november7-730026606190.europe-west1.run.app/messages"
